@@ -11,6 +11,11 @@ public class ResultButtons : MonoBehaviour {
     {
         if (FadeManager.Instance.GetIsFading() == false)
         {
+            Player player = GameObject.Find("Player").GetComponent<Player>();
+            int preCoin = PlayerPrefs.GetInt("coin", 0);
+            int curCoin = preCoin + player.getCoin();
+            PlayerPrefs.SetInt("coin",curCoin);
+            PlayerPrefs.Save();
             GetComponent<AudioSource>().Play();
             FadeManager.Instance.LoadScene("Title", 1f);
         }
@@ -20,6 +25,12 @@ public class ResultButtons : MonoBehaviour {
     {
         if (FadeManager.Instance.GetIsFading() == false)
         {
+            Player player = GameObject.Find("Player").GetComponent<Player>();
+            int preCoin = PlayerPrefs.GetInt("coin", 0);
+            int curCoin = preCoin + player.getCoin();
+            PlayerPrefs.SetInt("coin",curCoin);
+            PlayerPrefs.Save();
+
             GetComponent<AudioSource>().Play();
             FadeManager.Instance.LoadScene("Main", 1f);
         }

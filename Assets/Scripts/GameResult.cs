@@ -36,14 +36,8 @@ public class GameResult : MonoBehaviour
         */
         // resultPanel.GetComponent<Animator>().SetTrigger("Show");
 
-        int preCoin = PlayerPrefs.GetInt("coin", 0);
-        int curCoin = preCoin + c;
-        PlayerPrefs.SetInt("coin",curCoin);
-        PlayerPrefs.Save();
-
-
         naichilab.RankingLoader.Instance.SendScoreAndShowRanking(p,z,c);
     }
 
-  
+
 }

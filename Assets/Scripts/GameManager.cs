@@ -14,8 +14,6 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
         }
 
         DontDestroyOnLoad(this.gameObject);
-
-
     }
 
     private Player player;
